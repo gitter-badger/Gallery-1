@@ -68,6 +68,7 @@ Layout
 }
 #pagewrapper.hidden {
 	top: -100%;
+	left: -100%;
 }
 /* header */
 #header {

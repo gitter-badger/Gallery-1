@@ -34,6 +34,11 @@ jQuery(document).ready(function(){
 		});
 	});
 	
+	///////////////////////////////
+	// Body class
+	///////////////////////////////
+	$( "body" ).addClass( "loaded" );
+	
 });
 
 $('input, textarea').keydown(function(event){

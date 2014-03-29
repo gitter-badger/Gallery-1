@@ -6,20 +6,16 @@
 		'home',
 		'test'
 	);
-
-	//////////////////////////////
-	// Gallery
-	/////////////////////////////
-	$slide_duration = '5000'; // Slide Duration
-	$fade_duration = '750'; // Fade Duration
-	
 	
 	//////////////////////////////
-	// niceScroll
+	// Custom Settings
 	/////////////////////////////
-	$bar_color = '#000'; // Color
-	$bar_border = '#000'; // Border
-	$bar_opacity = '.5'; // Opacity
-	$bar_width = '8'; // Width
-	$bar_speed = '50'; // Speed
+	$hide_description = false; // Hide/Show page description
+	$slide_duration = '5000'; // Slider slide duration
+	$fade_duration = '750'; // Slider fade duration
+	$bar_color = '#000'; // Scrollbar Color
+	$bar_border = '#000'; // Scrollbar Border
+	$bar_opacity = '.5'; // Scrollbar Opacity
+	$bar_width = '8'; // Scrollbar Width
+	$bar_speed = '50'; // Scrollbar Speed
 ?>

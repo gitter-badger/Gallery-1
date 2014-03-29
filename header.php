@@ -44,8 +44,10 @@
 		<?php endif; // Toggle Fullscreen Button ?>
 		<?php if ( $gallery_navigation == true ): ?>
 		<!-- Gallery Navigation -->
-			<div id="prevbutton"></div>
-			<div id="nextbutton"></div>
+			<div id="gallery-nav">
+				<div id="prevbutton"></div>
+				<div id="nextbutton"></div>
+			</div>
 		<!-- Gallery Navigation -->
 		<?php endif; // Gallery Navigation ?>
 			<!-- header -->
@@ -55,7 +57,12 @@
 					<!-- #logo -->
 					<h1 id="logo"><?php echo $title ?></h1>
 					<!-- /#logo -->
-					<h2 id="description"><?php echo $description ?></h2>
+					<?php if ( $hide_description == false ) {
+						echo '<h2 id="description">'. $description .'</h2>';
+					} else {
+						echo '<h2 id="description" class="disabled">'. $description .'</h2>';
+					};
+					?>
 				</div>
 				<!-- /#siteinfo -->
 				<!-- #sitenav -->
