@@ -4,9 +4,9 @@
 	// *Menu Items*
 	/////////////////////////////
 	$pages = array(
-		array('value' => 'index', 'title' => 'Home'),
-		array('value' => 'gallery', 'title' => 'Gallery'),
-		array('value' => 'single', 'title' => 'Single image')
+		array('file' => 'index', 'title' => 'Home'),
+		array('file' => 'gallery', 'title' => 'Gallery'),
+		array('file' => 'single', 'title' => 'Single image')
 	);
 	
 	//////////////////////////////

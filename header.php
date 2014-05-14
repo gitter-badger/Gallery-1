@@ -73,10 +73,10 @@
 						<ul id="navigation">
 							<?php 
 								foreach ($pages as $page) {
-									if ( $page['value'] == $page_name ){
-										echo '<li class="active" id="' .$page['value']. '">' .$page['title']. '</li>';
+									if ( $page['file'] == $page_name ){
+										echo '<li class="active" id="' .$page['file']. '">' .$page['title']. '</li>';
 									}else{
-										echo '<a href="' .$page['value']. '"><li id="' .$page['value']. '">' . $page['title']. '</li></a>';
+										echo '<a href="' .$page['file']. '"><li id="' .$page['file']. '">' . $page['title']. '</li></a>';
 								}}
 							?>
 						</ul>
