@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){
+	
 	///////////////////////////////
 	// Keydown events
 	///////////////////////////////
@@ -14,6 +15,11 @@ jQuery(document).ready(function(){
 		};
 	});
 	
+	// Disable keydown events
+	$("input, textarea").keydown(function(event){
+		event.stopPropagation();
+	});
+
 	///////////////////////////////
 	// Swipe
 	///////////////////////////////
@@ -35,12 +41,13 @@ jQuery(document).ready(function(){
 	});
 	
 	///////////////////////////////
-	// Body class
+	// Extra classes
 	///////////////////////////////
-	$( "body" ).addClass( "loaded" );
 	
-});
+	// Body class on document ready
+	$( "body" ).addClass( "ready" );
+	
+	// Disable swipe
+	$( ".content, #header" ).addClass( "noSwipe" );
 
-$('input, textarea').keydown(function(event){
-	event.stopPropagation();
 });

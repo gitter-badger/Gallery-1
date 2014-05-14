@@ -1,11 +1,11 @@
-/***************************************************
+/*******************************************************************************
 RESET
-***************************************************/
+*******************************************************************************/
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0};button,a{outline:none;}
 
-/***************************************************
+/*******************************************************************************
 GENERAL STYLES
-***************************************************/
+*******************************************************************************/
 body {
 	background: #666;
 	color: #fff;
@@ -29,12 +29,7 @@ h1 {
 h2 {
 	font-size: .875em;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	line-height: 1em;
 	margin-bottom: .3em;
 }
@@ -52,9 +47,9 @@ body {
 	margin: 0;
 }
 
-/*
-Layout
-***************************************************/
+/*******************************************************************************
+LAYOUT
+*******************************************************************************/
 /* pagewrapper */
 #pagewrapper {
 	position: absolute;
@@ -63,6 +58,7 @@ Layout
 	width: 100%;
 	height: 100%;
 	display: table;
+	table-layout: fixed;
 	text-align: center;
 	z-index: 999;
 }
@@ -70,10 +66,11 @@ Layout
 	top: -100%;
 	left: -100%;
 }
+
 /* header */
 #header {
 	position: fixed;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 9999;
@@ -81,8 +78,9 @@ Layout
 	background: rgba(0,0,0,.7);
 }
 #header.hidden {
-	bottom: -200%;
+	top: -200%;
 }
+
 /* site info container */
 #siteinfo {
 	float: left;
@@ -122,7 +120,6 @@ Layout
 }
 #navigation li {
 	font: normal .81em/1em 'Roboto Slab', serif;
-	text-transform: capitalize;
 	margin: 10px;
 	display: inline-block;
 }
@@ -147,6 +144,9 @@ Layout
 	background: rgba(0,0,0,.7);
 }
 
+/*******************************************************************************
+GALLERY
+*******************************************************************************/
 /* toggle button */
 .togglebutton {
 	position: fixed;
@@ -173,7 +173,7 @@ Layout
 	content: '\e803';
 }
 
-/* Gallery Navigation */
+/* gallery navigation */
 #prevbutton {
 	left: 0;
 	padding: 25px 25px 25px 20px;
@@ -214,6 +214,11 @@ Layout
 	margin-top: -26px;
 	padding: 15px 10px 15px 15px;
 }
+
+
+/*******************************************************************************
+SHARED STYLES
+*******************************************************************************/
 #header,
 .content,
 #prevbutton,
@@ -221,7 +226,9 @@ Layout
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 
-/* clearfix */
+/*******************************************************************************
+CLEAR
+*******************************************************************************/
 .clearfix {
 	display: inline-block;
 }
@@ -234,7 +241,9 @@ Layout
 	clear: both;
 }
 
-/* Fontello */
+/*******************************************************************************
+FONTS
+*******************************************************************************/
 .togglebutton:before,
 .togglebutton.hidden:before,
 #prevbutton:after,
@@ -243,12 +252,16 @@ Layout
 	line-height: 1em;
 }
 
-/* TRANSITIONS */
+/*******************************************************************************
+TRANSITIONS
+*******************************************************************************/
 #header,
 #pagewrapper,
 #prevbutton,
 #nextbutton,
-.togglebutton {
+.togglebutton,
+#circleG,
+.content {
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-ms-transition: all .3s ease-in-out;
@@ -256,34 +269,35 @@ Layout
 	transition: all .3s ease-in-out;
 }
 
-/* PACE */
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+/* switch visibility on page load */
+#header,
+#pagewrapper,
+#gallery-nav,
+.togglebutton {
+	opacity: 0;
+	visibility: hidden;
+}
+.ready #header,
+.ready #pagewrapper,
+.ready #gallery-nav,
+.ready .togglebutton {
+	opacity: 1;
+	visibility: visible;
 }
 
-.pace .pace-progress {
-  background-color: rgba(0, 0, 0, 0.19999999999999996);
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-
-  -webkit-transition: width 1s;
-  -moz-transition: width 1s;
-  -o-transition: width 1s;
-  transition: width 1s;
+.ready #circleG {
+	opacity: 0;
+	visibility: hidden;
 }
 
+/*******************************************************************************
+ANIMATIONS
+*******************************************************************************/
 
-/***************************************************
-ANIMATION ICON
-***************************************************/
-#circleG{
+/*
+Preloader
+*******************************************************************************/
+#circleG {
 	width:74px;
 	height: 18px;
 	position: fixed;
@@ -292,116 +306,107 @@ ANIMATION ICON
 	margin: -9px 0 0 -37px;
 	z-index: 999999;
 }
-
-.circleG{
-	background-color:#FFFFFF;
+.circleG {
+	background-color: #FFFFFF;
 	background-color: rgba(255,255,255,.8);
-	float:left;
-	height:18px;
-	margin-left:10px;
-	width:18px;
-	-moz-animation-name:bounce_circleG;
-	-moz-animation-duration:.75s;
-	-moz-animation-iteration-count:infinite;
-	-moz-animation-direction:linear;
-	-moz-border-radius:12px;
-	-webkit-animation-name:bounce_circleG;
-	-webkit-animation-duration:.75s;
-	-webkit-animation-iteration-count:infinite;
-	-webkit-animation-direction:linear;
-	-webkit-border-radius:12px;
-	-o-animation-name:bounce_circleG;
-	-o-animation-duration:.75s;
-	-o-animation-iteration-count:infinite;
-	-o-animation-direction:linear;
-	-o-border-radius:12px;
-	-ms-animation-name:bounce_circleG;
-	-ms-animation-duration:.75s;
-	-ms-animation-iteration-count:infinite;
-	-ms-animation-direction:linear;
-	-ms-border-radius:12px;
-	animation-name:bounce_circleG;
-	animation-duration:.75s;
-	animation-iteration-count:infinite;
-	animation-direction:linear;
-	border-radius:12px;
+	float: left;
+	height: 18px;
+	margin-left: 10px;
+	width: 18px;
+	-moz-animation-name: bounce_circleG;
+	-moz-animation-duration: .75s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: linear;
+	-moz-border-radius: 12px;
+	-webkit-animation-name: bounce_circleG;
+	-webkit-animation-duration: .75s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: linear;
+	-webkit-border-radius: 12px;
+	-o-animation-name: bounce_circleG;
+	-o-animation-duration: .75s;
+	-o-animation-iteration-count: infinite;
+	-o-animation-direction: linear;
+	-o-border-radius: 12px;
+	-ms-animation-name: bounce_circleG;
+	-ms-animation-duration: .75s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-direction: linear;
+	-ms-border-radius: 12px;
+	animation-name: bounce_circleG;
+	animation-duration: .75s;
+	animation-iteration-count: infinite;
+	animation-direction: linear;
+	border-radius: 12px;
 }
-
-#circleG_1{
-	-moz-animation-delay:.15s;
-	-webkit-animation-delay:.15s;
-	-o-animation-delay:.15s;
-	-ms-animation-delay:.15s;
-	animation-delay:.15s;
+#circleG_1 {
+	-moz-animation-delay: .15s;
+	-webkit-animation-delay: .15s;
+	-o-animation-delay: .15s;
+	-ms-animation-delay: .15s;
+	animation-delay: .15s;
 	margin-left: 0;
 }
-
-#circleG_2{
-	-moz-animation-delay:.35s;
-	-webkit-animation-delay:.35s;
-	-o-animation-delay:.35s;
-	-ms-animation-delay:.35s;
-	animation-delay:.35s;
+#circleG_2 {
+	-moz-animation-delay: .35s;
+	-webkit-animation-delay: .35s;
+	-o-animation-delay: .35s;
+	-ms-animation-delay: .35s;
+	animation-delay: .35s;
 }
-
-#circleG_3{
-	-moz-animation-delay:.45s;
-	-webkit-animation-delay:.45s;
-	-o-animation-delay:.45s;
-	-ms-animation-delay:.45s;
-	animation-delay:.45s;
+#circleG_3 {
+	-moz-animation-delay: .45s;
+	-webkit-animation-delay: .45s;
+	-o-animation-delay: .45s;
+	-ms-animation-delay: .45s;
+	animation-delay: .45s;
 }
-
-@-moz-keyframes bounce_circleG{
-	0%{
-	}
+@-moz-keyframes bounce_circleG {
 	50%{
-		background-color:#000000;
-	}
-	100%{
+		background-color: #000000;
 	}
 }
-
-@-webkit-keyframes bounce_circleG{
-	0%{
-	}
+@-webkit-keyframes bounce_circleG {
 	50%{
-		background-color:#000000;
-	}
-	100%{
+		background-color: #000000;
 	}
 }
-
 @-o-keyframes bounce_circleG{
-	0%{
-	}
 	50%{
-		background-color:#000000;
-	}
-	100%{
+		background-color: #000000;
 	}
 }
-
 @-ms-keyframes bounce_circleG{
-	0%{
-	}
 	50%{
-		background-color:#000000;
-	}
-	100%{
+		background-color: #000000;
 	}
 }
-
 @keyframes bounce_circleG{
-	0%{
-	}
 	50%{
-		background-color:#000000;
-	}
-	100%{
+		background-color: #000000;
 	}
 }
 
-/***************************************************
+/*******************************************************************************
 MEDIA QUERIES
-***************************************************/
+*******************************************************************************/
+
+@media screen and (max-width: 980px) {
+	.content {
+		max-width: 75%;
+	}
+	#prevbutton {
+		margin-top: -31px;
+		padding: 20px 20px 20px 15px;
+	}
+	#nextbutton {
+		margin-top: -31px;
+		padding: 20px 15px 20px 20px;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	#gallery-nav {
+		display: none;
+	}
+}

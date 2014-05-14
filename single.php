@@ -2,10 +2,9 @@
 	///////////////////////////////
 	//// Necessary parameters
 	//////////////////////////////
-	$title = "Site Title"; // Page Title
-	$description = "Descrition"; // Description
+	$page_description = "Page Descrition"; // Page Description
 	$keywords = "Keywords"; // Keywords
-	$page_name = "test"; // Page name
+	$page_name = "single"; // Page name
 	$gallery_navigation = false; // Gallery Navigation Arrows
 	$fullscreen_button = true; // Toggle Button
 	$show_content = true; // Show Content

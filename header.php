@@ -6,7 +6,7 @@
 		<!-- meta -->
 		<meta charset="utf-8">
 		<meta name="keywords" content="<?php echo $keywords //echo Keywords ?>">
-		<meta name="description" content="<?php echo $description //echo Description ?>">
+		<meta name="description" content="<?php echo $page_description //echo Page Description ?>">
 		<meta name="viewport" content="width=width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 		<link rel="icon" type="image/png" href="assets/favicon.png">
 		<!-- /meta -->
@@ -57,10 +57,10 @@
 					<!-- #logo -->
 					<h1 id="logo"><?php echo $title ?></h1>
 					<!-- /#logo -->
-					<?php if ( $hide_description == false ) {
-						echo '<h2 id="description">'. $description .'</h2>';
+					<?php if ( $hide_site_tagline == false ) {
+						echo '<h2 id="description">'. $site_tagline .'</h2>';
 					} else {
-						echo '<h2 id="description" class="disabled">'. $description .'</h2>';
+						echo '<h2 id="description" class="disabled">'. $site_tagline .'</h2>';
 					};
 					?>
 				</div>
@@ -73,10 +73,10 @@
 						<ul id="navigation">
 							<?php 
 								foreach ($pages as $page) {
-									if ( $page == $page_name ){
-										echo '<li class="active" id="' .$page. '">' .$page. '</li>';
+									if ( $page['value'] == $page_name ){
+										echo '<li class="active" id="' .$page['value']. '">' .$page['title']. '</li>';
 									}else{
-										echo '<a href="' .$page. '"><li id="' .$page. '">' . $page. '</li></a>';
+										echo '<a href="' .$page['value']. '"><li id="' .$page['value']. '">' . $page['title']. '</li></a>';
 								}}
 							?>
 						</ul>
