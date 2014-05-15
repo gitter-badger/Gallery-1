@@ -9,7 +9,7 @@
 	$fullscreen_button = true; // Toggle Button
 	$show_content = true; // Show Content
 		
-	include_once('header.php');
+	include_once('includes/header.php');
 ?>
 <?php if ( $show_content == true ) : ?>
 <!-- .content -->
@@ -39,5 +39,5 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <!-- /.content -->
 <?php endif; ?>
 <?php
-	include_once('footer.php');
+	include_once('includes/footer.php');
 ?>
