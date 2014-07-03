@@ -2,12 +2,13 @@
 	///////////////////////////////
 	//// Necessary parameters
 	//////////////////////////////
-	$page_description = "Page Descrition"; // Page Description
-	$keywords = "Keywords"; // Keywords
-	$page_name = "single"; // Page name
-	$gallery_navigation = false; // Gallery Navigation Arrows
-	$fullscreen_button = true; // Toggle Button
-	$show_content = true; // Show Content
+	$page_description = 'Page Descrition';			// Page Description
+	$keywords = 'Keywords';							// Keywords
+	$page_name = 'single';							// Page name
+	$gallery = 'single';							// Gallery folder
+	$gallery_navigation = false;					// Gallery Navigation Arrows
+	$fullscreen_button = true;						// Toggle Button
+	$show_content = true;							// Show Content
 	
 	include_once('includes/header.php');
 ?>

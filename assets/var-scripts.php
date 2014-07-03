@@ -2,7 +2,7 @@
 	///////////////////////////////
 	// Gallery
 	///////////////////////////////
-	$.backstretch([ <?php foreach(glob('galleries/' . $page_name . '/*.*') as $filename){ echo '"' . $filename . '",'."\n";} ?> ],
+	$.backstretch([ <?php foreach(glob('galleries/' . $gallery . '/*.{gif,jpg,png}', GLOB_BRACE) as $filename){ echo '"' . $filename . '",'."\n";} ?> ],
 	{duration: <?php echo $slide_duration ?>, fade: <?php echo $fade_duration ?>});
 	$("#prevbutton").click(function(x) {
 		x.preventDefault();

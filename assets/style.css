@@ -1,3 +1,17 @@
+/*
+ * @author		Cristian Iacobanu
+ *
+ * @link		Author: 		http://cristianiacobanu.com
+ *				Demo:			http://dev.cristianiacobanu.com/gallery/
+ *				GitHub Repo:	https://github.com/cristianiacobanu/gallery
+ *				README:			https://github.com/cristianiacobanu/gallery/blob/master/README.md
+ *				CHANGELOGS:		https://github.com/cristianiacobanu/gallery/blob/master/CHANGELOGS.md
+ *
+ * @licence		MIT:			https://github.com/cristianiacobanu/gallery/blob/master/LICENSE
+ *
+ * @verson		1.0.0
+ */
+
 /*******************************************************************************
 RESET
 *******************************************************************************/
@@ -62,9 +76,9 @@ LAYOUT
 	text-align: center;
 	z-index: 999;
 }
-#pagewrapper.hidden {
-	top: -100%;
-	left: -100%;
+.ready #pagewrapper.hidden {
+	opacity: 0;
+	visibility: hidden;
 }
 
 /* header */
