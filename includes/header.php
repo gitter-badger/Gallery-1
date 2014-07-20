@@ -11,16 +11,16 @@
 		<link rel="icon" type="image/png" href="assets/favicon.png">
 		<!-- /meta -->
 		<title><?php echo $title //echo Page Title ?></title>
-		<!-- styles -->
-		<link href="assets/style.css" rel="stylesheet" type="text/css">
-		<!-- /styles -->
-		<!-- fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
-		<link href="assets/fonts/fontello/fontello.css" rel="stylesheet" type="text/css">
+		<!-- css -->
+		<link id="google-fonts-css" href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+		<link id="bootsrap-css" href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link id="animate-css" href="assets/css/animate.min.css" rel="stylesheet" type="text/css">
+		<link id="custom-icons-css" href="assets/fonts/fontello/fontello.css" rel="stylesheet" type="text/css">
 		<!--[if lt IE 7]>
 		<link href="assets/fonts/fontello/fontello-ie7.css" rel="stylesheet" type="text/css">
 		<![endif]-->
-		<!-- /fonts -->
+		<link id="default-css" href="assets/css/style.css" rel="stylesheet" type="text/css">
+		<!-- /css -->
 		<!-- script -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/js/jquery.nicescroll.min.js"></script>
@@ -32,7 +32,7 @@
 			<script src="http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
 			<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
 		<![endif]-->
-		<?php foreach(glob('galleries/' . $page_name . '/*.*') as $filename) { echo '<meta property="og:image" content="' . $filename . '" />'."\n"; } ?>
+		<?php // foreach(glob('galleries/' . $page_name . '/*.*') as $filename) { echo '<meta property="og:image" content="' . $filename . '" />'."\n"; } ?>
 	</head>
 	<!-- /head -->
 	<!-- body -->
