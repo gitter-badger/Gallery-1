@@ -4,7 +4,7 @@
 	/////////////////////////////
 	$title = "Site Title"; // Site Title
 	$site_tagline = "Tagline"; // Site Tagline
-	$hide_site_tagline = false; // Hide/Show site tagline (true, false)
+	$hide_site_tagline = false; // Hide/Show site tagline (true, false; default = false)
 	
 	//////////////////////////////
 	// Menu Items
