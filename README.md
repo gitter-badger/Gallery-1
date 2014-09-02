@@ -1,4 +1,4 @@
 Quick & Easy Gallery Generator
 =======
 
-# Still under development
+Still under development
